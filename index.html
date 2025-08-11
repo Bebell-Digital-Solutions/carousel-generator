@@ -4,35 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carousel Generator</title>
+    
+       <!-- Favicon -->
+    <link rel="icon" href="https://bucket.mlcdn.com/a/3336/3336910/images/8693866308ced9e7451285a4fc716d1d589c8bc4.png">    
+    
+    
+    
+    
+    
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
+        .custom-image-widget {
+            position: fixed !important;
+            top: 50px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            right: 0px;
+            z-index: 999;
+        }
+        
+        .custom-image {
+            width: 70px;
+            height: auto;
+            transition: transform 0.2s;
+        }
+        
+        .custom-image-widget:hover .custom-image {
+            transform: scale(1.05);
+        }         
+         
+        
+        
+        
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f8fafc;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             min-height: 100vh;
-            padding: 20px;
         }
-
+        
         .container {
+            width: 100%;
             max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 30px;
+            width: 100%;
+        }
+        
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .header {
-            background: #df1783;
-            color: white;
-            padding: 40px;
-            text-align: center;
+        .brand-logo {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
         }
+
+        .brand-text {
+            font-size: clamp(1.5rem, 4vw, 1.7rem);
+            font-weight: bold;
+            color: #000;
+            white-space: nowrap;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin-top: 0;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         .header h1 {
             font-size: 2.5rem;
@@ -48,6 +133,12 @@
         .generator {
             padding: 40px;
         }
+
+
+
+
+
+
 
         .section {
             margin-bottom: 40px;
@@ -215,24 +306,50 @@
 
 
 
-  .bebell-footer p {
-    align-items: center;     /* Vertical centering */
-    text-align: center;      /* Center text within paragraph */
-    font-size: 12px;
-    line-height: 1.5;
-    margin: 0;
-  }
-  
-  .bebell-link {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .bebell-link:hover {
-    color: #df1783;
-  }
-        
+
+.color-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.color-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 7px;
+    border: 1px solid #ddd;
+}
+
+.color-input::-webkit-color-swatch {
+    border: none;
+    border-radius: 50px;
+    padding: 0;
+}
+
+.color-input::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 7px;
+}
+
+.color-input::-moz-color-swatch {
+    border: none;
+    border-radius: 7px;
+}
+
+
+
+
+
+
+
+ 
       
         @media (max-width: 768px) {
             .container {
@@ -269,6 +386,85 @@
                 width: 100%;
             }
         }
+        
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            padding-top: 30px;
+            background: transparent;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 12px;
+            width: 100%;
+            border-radius: 7px;
+            z-index: 10;
+            margin: 0 auto;
+            max-width: 820px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 0;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            padding: 0.25rem;
+        }
+
+        .social-link {
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: var(--radius);
+            background: white;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
+        }
+
+        .social-link:hover {
+            color: var(--text);
+            background: var(--card);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .bebell-footer {
+            padding: 20px;
+        }
+
+        .bebell-footer p {
+            align-items: center;
+            text-align: center;
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .bebell-link {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .bebell-link:hover {
+            color: #df1783;
+        }  
+        
+        
+        
+        
+        
+        
+        
+        
+        
     </style>
 
 
@@ -326,11 +522,30 @@ document.addEventListener("DOMContentLoaded", function () {
 </head>
   
 <body>
+
+    <div class="custom-image-widget">
+        <a href="https://bebell-digital-solutions.github.io/magic-toolbox-database/en-v03">
+            <img class="custom-image" 
+                 src="https://bucket.mlcdn.com/a/3336/3336910/images/81299ab4b3def01be268d66464324457d20931ac.gif" 
+                 alt="English Translation">
+        </a>
+    </div> 
+
     <div class="container">
-        <div class="header">
-            <h1>🎠 Carousel Generator</h1>
-            <p>Create beautiful, responsive carousels with custom styling</p>
-        </div>
+        <!-- Header -->
+        <header>
+            <div class="header">
+                <div class="brand">
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/c506fa1172c62b4aeed105882b84095ade5e6a2a.png" alt="VibeCoding Studio Logo" class="brand-logo">
+                    <span class="brand-text">Carousel Generator</span>
+                </div>
+                <p class="subtitle">Create beautiful, responsive carousels with custom styling</p>
+            </div>
+        </header>
+    </div>
+
+
+
 
         <div class="generator">
             <!-- Configuration Section -->
@@ -354,15 +569,25 @@ document.addEventListener("DOMContentLoaded", function () {
                         </select>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="arrowColor">Arrow Color</label>
-                        <input type="color" id="arrowColor" value="#DF1783">
-                    </div>
+                    
+                    
                     
                     <div class="form-group">
-                        <label for="indicatorColor">Indicator Color</label>
-                        <input type="color" id="indicatorColor" value="#DF1783">
-                    </div>
+    <label for="arrowColor">Arrow Color</label>
+    <div class="color-input-container">
+        <input type="color" id="arrowColor" value="#DF1783" class="color-input">
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="indicatorColor">Indicator Color</label>
+    <div class="color-input-container">
+        <input type="color" id="indicatorColor" value="#DF1783" class="color-input">
+    </div>
+</div>
+                    
+                    
+                    
                     
                     <div class="form-group">
                         <label for="autoPlay">Auto Play</label>
@@ -439,7 +664,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <!-- Preview Section -->
             <div class="section">
-                <h2>👀 Preview</h2>
+                <h2>🔎 Preview</h2>
                 <div class="preview-section">
                     <div id="carouselPreview"></div>
                 </div>
@@ -456,21 +681,52 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
 
+   
+   
+   
+   
+   
+   
 
-<div class="bebell-footer">
-  <p>
-    Powered with 💖 by 
-    <a href="https://bebelldigitalsolutions.com" class="bebell-link">
-      Bebell Digital Solutions
-    </a>.<br>
-    Copyright © 2024 • All rights reserved.
-  </p>
-</div>
-
-
-        
+  <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://bebell-digital-solutions.github.io/iframe-generator" class="social-link" rel="noopener">
+                <span>🧰</span> iFrame Generator
+            </a>
+            <a href="https://bebell-digital-solutions.github.io/faq-builder-en" class="social-link" rel="noopener">
+                <span>🧰</span> FAQ Generator
+            </a>
+            <a href="https://bebell-digital-solutions.github.io/carousel-generator" class="social-link" rel="noopener">
+                <span>🧰</span> Carousel Generator
+            </a>
+            <a href="https://bebell-digital-solutions.github.io/magic-toolbox-database/en-v03" class="social-link" rel="noopener">
+                <span>🧰</span> Magic Toolbox
+            </a>
+            <a href="mailto:soporte@bebelldigitalsolutions.com" class="social-link" rel="noopener">
+                <span>📨</span> Technical Support
+            </a>
         </div>
-    </div>
+
+
+        <div class="bebell-footer">
+            <p>Desarrollado con 💖 por   
+                <a href="https://bebelldigitalsolutions.com" class="bebell-link">
+                    Bebell Digital Solutions.
+                </a><br>
+                <a id="copyrightYear"> © 2024 • All rights reserved.</a>
+            </p>
+        </div>
+    </footer>
+        
+      </div>  
+      
+      
+      
+      
+      
+      
+ 
     
     <script>
         let slideCounter = 6;
@@ -978,3 +1234,8 @@ document.addEventListener("DOMContentLoaded", function () {
     </script>
 </body>
 </html>
+
+
+
+
+
